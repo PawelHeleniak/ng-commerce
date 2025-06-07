@@ -4,11 +4,10 @@ import { FooterComponent } from './footer/footer.component';
 import { Router, NavigationEnd, RouterModule } from '@angular/router';
 
 @Component({
-  selector: 'app-main',
-  standalone: true,
-  imports: [HeaderComponent, FooterComponent, RouterModule],
-  templateUrl: './main.component.html',
-  styleUrl: './main.component.scss',
+    selector: 'app-main',
+    imports: [HeaderComponent, FooterComponent, RouterModule],
+    templateUrl: './main.component.html',
+    styleUrl: './main.component.scss'
 })
 export class MainComponent {
   constructor(private router: Router) {}

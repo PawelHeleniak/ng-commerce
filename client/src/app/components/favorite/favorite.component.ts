@@ -7,11 +7,10 @@ type Product = {
   desc: string;
 };
 @Component({
-  selector: 'app-favorite',
-  standalone: true,
-  imports: [],
-  templateUrl: './favorite.component.html',
-  styleUrl: './favorite.component.scss',
+    selector: 'app-favorite',
+    imports: [],
+    templateUrl: './favorite.component.html',
+    styleUrl: './favorite.component.scss'
 })
 export class FavoriteComponent {
   public products: Array<Product> = [

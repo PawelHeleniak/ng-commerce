@@ -19,11 +19,10 @@ import { UsersService } from '../../../core/services/users.service';
 import { AccountService } from '../../../core/services/account.service';
 
 @Component({
-  selector: 'app-login',
-  standalone: true,
-  imports: [ReactiveFormsModule, CommonModule, RouterModule],
-  templateUrl: './login.component.html',
-  styleUrl: './login.component.scss',
+    selector: 'app-login',
+    imports: [ReactiveFormsModule, CommonModule, RouterModule],
+    templateUrl: './login.component.html',
+    styleUrl: './login.component.scss'
 })
 export class LoginComponent {
   constructor(

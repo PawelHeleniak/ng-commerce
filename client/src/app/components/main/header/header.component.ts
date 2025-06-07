@@ -3,11 +3,10 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-header',
-  standalone: true,
-  imports: [RouterModule, CommonModule],
-  templateUrl: './header.component.html',
-  styleUrl: './header.component.scss',
+    selector: 'app-header',
+    imports: [RouterModule, CommonModule],
+    templateUrl: './header.component.html',
+    styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
   constructor(private router: Router) {}

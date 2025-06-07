@@ -17,11 +17,10 @@ type Order = {
   status: string;
 };
 @Component({
-  selector: 'app-account-panel',
-  standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
-  templateUrl: './account-panel.component.html',
-  styleUrl: './account-panel.component.scss',
+    selector: 'app-account-panel',
+    imports: [CommonModule, ReactiveFormsModule],
+    templateUrl: './account-panel.component.html',
+    styleUrl: './account-panel.component.scss'
 })
 export class AccountPanelComponent {
   constructor(

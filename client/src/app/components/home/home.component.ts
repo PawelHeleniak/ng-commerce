@@ -23,11 +23,10 @@ type ProductSpec = {
 };
 
 @Component({
-  selector: 'app-home',
-  standalone: true,
-  imports: [],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.scss',
+    selector: 'app-home',
+    imports: [],
+    templateUrl: './home.component.html',
+    styleUrl: './home.component.scss'
 })
 export class HomeComponent {
   constructor(private productsService: ProductsService) {}

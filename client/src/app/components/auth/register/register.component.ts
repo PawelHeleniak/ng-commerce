@@ -18,11 +18,10 @@ type Error = {
 };
 
 @Component({
-  selector: 'app-register',
-  standalone: true,
-  imports: [ReactiveFormsModule, CommonModule, RouterModule],
-  templateUrl: './register.component.html',
-  styleUrl: './register.component.scss',
+    selector: 'app-register',
+    imports: [ReactiveFormsModule, CommonModule, RouterModule],
+    templateUrl: './register.component.html',
+    styleUrl: './register.component.scss'
 })
 export class RegisterComponent {
   constructor(private fb: FormBuilder, private router: Router) {}
