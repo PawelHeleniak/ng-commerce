@@ -1,0 +1,95 @@
+<section class="section">
+  <div class="section__wrapper">
+    <div class="section__title"><h2>Konto</h2></div>
+    <div class="section__row">
+      <div class="section__box one">
+        <div class="options">
+          <button
+            class="options__btn"
+            (click)="handleOption('konto')"
+            [ngClass]="{ 'options__btn--active': option === 'konto' }"
+          >
+            Dane konta</button
+          ><button
+            class="options__btn"
+            (click)="handleOption('zamowienie')"
+            [ngClass]="{ 'options__btn--active': option === 'zamowienie' }"
+          >
+            Zamówienia
+          </button>
+        </div>
+      </div>
+      <div class="section__box two">
+        @if (option === 'konto') {
+        <form class="form" [formGroup]="dataFormGroup">
+          <div class="form__input required">
+            <label for="name">Imie<span>*</span>:</label>
+            <input id="name" type="text" formControlName="name" required />
+          </div>
+          <div class="form__input required">
+            <label for="lastName">Nazwisko<span>*</span>:</label>
+            <input
+              id="lastName"
+              type="text"
+              formControlName="lastName"
+              required
+            />
+          </div>
+          <div class="form__input required">
+            <label for="email">E-mail<span>*</span>:</label>
+            <input id="email" type="email" formControlName="email" required />
+          </div>
+          <div class="form__input">
+            <label for="phone">Telefon:</label>
+            <input id="phone" type="tel" formControlName="phone" />
+          </div>
+          <div class="form__input">
+            <label for="address">Adres:</label>
+            <input id="address" type="text" formControlName="address" />
+          </div>
+          <div class="form__buttons">
+            <div class="form__btn">Zapisz</div>
+          </div>
+        </form>
+        } @else if (option === 'zamowienie') {
+        <table class="table" cellspacing="0">
+          <thead>
+            <tr>
+              @for (head of ordersHead; track $index) {
+              <th class="th">
+                <span>{{ head }}</span>
+              </th>
+              }
+            </tr>
+          </thead>
+          <tbody>
+            @for (body of ordersBody; track $index) {
+            <tr class="tr">
+              <td class="start-row">
+                @if (body.order) { {{ body.order }} }@else{ - }
+              </td>
+              <td
+                [ngClass]="{
+                  sent: body.status === 'Wysłane',
+                  success: body.status === 'Zakończono'
+                }"
+              >
+                @if (body.status) { {{ body.status }} }@else{ - }
+              </td>
+              <td>@if (body.date) { {{ body.date }} }@else{ - }</td>
+            </tr>
+            } @empty {
+            <tr>
+              <td class="table__empty" colspan="3">
+                <i class="fa-regular fa-comment"></i> Brak danych do
+                wyświetlenia.
+              </td>
+            </tr>
+            }
+          </tbody>
+        </table>
+        }
+      </div>
+    </div>
+  </div>
+</section>

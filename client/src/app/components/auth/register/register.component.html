@@ -1,0 +1,130 @@
+<section class="section">
+  <div class="auth">
+    <div class="auth__box">
+      <div class="auth__header">
+        <i class="fa-solid fa-right-to-bracket"></i>
+        <h2>Rejestracja</h2>
+      </div>
+      <div class="auth__form">
+        @if(registerFormNumber === 1){
+        <form class="form" [formGroup]="registerFormGroup">
+          <div class="form__input required">
+            <label for="email">E-mail<span>*</span>:</label>
+            <input id="email" type="email" formControlName="email" required />
+            @if(registerFormGroup.get('email')?.touched) {
+            @if(registerFormGroup.get('email')?.errors?.['required']){
+            <small class="required-field">Pole jest wymagane.</small>
+            } @else if(registerFormGroup.get('email')?.errors?.['email'] ||
+            registerFormGroup.get('email')?.errors?.['invalidEmail']){
+            <small class="required-field">Email jest niepoprawny.</small>
+            } }
+          </div>
+          <div class="form__input required">
+            <label for="password">Hasło<span>*</span>:</label>
+            <input
+              id="password"
+              type="password"
+              formControlName="password"
+              required
+            />
+            @if(registerFormGroup.get('password')?.touched) {
+            @if(registerFormGroup.get('password')?.errors?.['required']){
+            <small class="required-field">Pole jest wymagane</small>
+            } @if(registerFormGroup.get('password')?.errors?.['uppercase']){
+            <small class="required-field"
+              >Pole wymaga przynajmniej 1 dużej litery</small
+            >
+            } @if(registerFormGroup.get('password')?.errors?.['minlength']){
+            <small class="required-field"
+              >Pole wymaga min. {{ minLength }} znaków.</small
+            >
+            } }
+          </div>
+          <div class="form__input required">
+            <label for="repeatPassword">Powtórz hasło<span>*</span>:</label>
+            <input
+              id="repeatPassword"
+              type="password"
+              formControlName="repeatPassword"
+              required
+            />
+            @if(registerFormGroup.get('repeatPassword')?.touched) {
+            @if(registerFormGroup.get('repeatPassword')?.errors?.['required']){
+            <small class="required-field">Pole jest wymagane.</small>
+            } } @if(registerFormGroup.errors?.['invalidPasswordsMatch'] &&
+            (registerFormGroup.dirty || registerFormGroup.touched)){
+            <small class="required-field">Hasła różnią się od siebie.</small>
+            }
+          </div>
+        </form>
+        } @else if( registerFormNumber === 2){
+        <form class="form" [formGroup]="register2FormGroup">
+          <div class="form__input required">
+            <label for="name">Imie<span>*</span>:</label>
+            <input id="name" type="text" formControlName="name" required />
+            @if(register2FormGroup.get('name')?.touched) {
+            @if(register2FormGroup.get('name')?.errors?.['required']){
+            <small class="required-field">Pole jest wymagane.</small>
+            }}
+          </div>
+          <div class="form__input required">
+            <label for="lastname">Nazwisko<span>*</span>:</label>
+            <input
+              id="lastname"
+              type="text"
+              formControlName="lastname"
+              required
+            />
+            @if(register2FormGroup.get('lastname')?.touched) {
+            @if(register2FormGroup.get('lastname')?.errors?.['required']){
+            <small class="required-field">Pole jest wymagane.</small>
+            } }
+          </div>
+          <div class="form__input required">
+            <label for="phone">Numer telefonu:</label>
+            <input id="phone" type="text" formControlName="phone" />
+          </div>
+          <div class="form__input required">
+            <label for="address">Adres:</label>
+            <input id="address" type="text" formControlName="address" />
+          </div>
+        </form>
+        } @if(error.active){
+        <div
+          class="dialog__error"
+          [ngClass]="{ 'dialog__error--success': error.status === 'success' }"
+        >
+          <small>{{ error.message }}</small>
+        </div>
+        }
+        <div class="form__btns end">
+          @if(registerFormNumber === 1){
+          <button
+            (click)="onSubmit()"
+            class="form__btn"
+            [ngClass]="{ 'form__btn--disabled': registerFormGroup.invalid }"
+          >
+            Dalej
+          </button>
+          } @else if(registerFormNumber === 2){
+          <button
+            (click)="onSubmit2()"
+            class="form__btn"
+            [ngClass]="{ 'form__btn--disabled': register2FormGroup.invalid }"
+          >
+            Zarejestruj się
+          </button>
+          <button (click)="registerFormNumber = 1" class="form__btn btn-back">
+            Wstecz
+          </button>
+          }
+        </div>
+        <small class="auth__other"
+          >Masz już konto?<a [routerLink]="['/logowanie']"
+            >zaloguj się!</a
+          ></small
+        >
+      </div>
+    </div>
+  </div>
+</section>

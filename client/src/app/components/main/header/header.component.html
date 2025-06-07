@@ -1,0 +1,55 @@
+<header class="header">
+  <div class="header__wrapper">
+    <div class="header__logo">YourPhone</div>
+    <div class="header__tab">
+      <div class="header__login">
+        @if(!account){
+        <a [routerLink]="['/logowanie']" (click)="handleNav('')">
+          <i class="fa-solid fa-user"></i>
+          <span>Zaloguj się</span>
+        </a>
+        }@else {
+        <a (click)="logOut()">
+          <i class="fa-solid fa-right-from-bracket"></i>
+          <span>Wyloguj się</span>
+        </a>
+        <a
+          [routerLink]="['/panel-uzytkownika']"
+          [ngClass]="{ 'router-link-active': 'konto' === nav }"
+          (click)="handleNav('konto')"
+        >
+          <i class="fa-solid fa-user"></i>
+          <span>Konto</span>
+        </a>
+        }
+      </div>
+      <div class="header__favorite">
+        <a
+          [routerLink]="['/ulubione']"
+          [ngClass]="{ 'router-link-active': 'ulubione' === nav }"
+          (click)="handleNav('ulubione')"
+        >
+          <i class="fa-solid fa-heart"></i>
+          <span>Ulubione</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+<nav class="nav">
+  <div class="nav__wrapper">
+    <div class="nav__menu">
+      <div class="nav__list">
+        @for (item of navList; track $index) {
+        <a
+          [routerLink]="['/']"
+          class="nav__item"
+          [ngClass]="{ 'nav__item--active': item === nav }"
+          (click)="handleNav(item)"
+          >{{ item }}</a
+        >
+        }
+      </div>
+    </div>
+  </div>
+</nav>

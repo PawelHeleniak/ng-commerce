@@ -1,0 +1,55 @@
+$thead: var(--nav_2);
+$text-thead: #fff;
+$bg-1: #fff;
+$bg-2: #d9d9d9;
+$bg-hover: var(--table-hover);
+$text-hover: var(--text-color_3);
+$text: var(--text-color_3);
+
+// Table
+.box-table {
+  background-color: $bg-1;
+  width: 100%;
+  border-radius: 8px;
+  &__content {
+    position: relative;
+  }
+}
+.table {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  color: $text;
+  background-color: $bg-1;
+
+  thead {
+    background-color: $thead;
+    tr {
+      .th {
+        padding: 0.5rem;
+        text-align: start;
+      }
+      .th,
+      .th span {
+        color: $text-thead;
+      }
+    }
+  }
+  tbody {
+    .tr {
+      position: relative;
+      &:nth-child(2n) {
+        background-color: $bg-2;
+      }
+    }
+    td {
+      text-align: start;
+      padding: 0.3rem;
+    }
+  }
+  &__empty {
+    text-align: center !important;
+    font-size: 1.2rem !important;
+    padding: 0.5rem !important;
+  }
+}

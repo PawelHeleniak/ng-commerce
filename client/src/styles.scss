@@ -1,0 +1,56 @@
+@import url(./assets/scss/variable.scss);
+@import url(./assets/scss/common.scss);
+@import url(./assets/scss/table.scss);
+
+/* Reset CSS */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+body {
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Roboto", sans-serif;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: #222;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+  color: #222;
+}
+@media only screen and (min-width: 768px) {
+  body {
+    font-size: 18px;
+  }
+}
+a {
+  text-decoration: none;
+  color: #222;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

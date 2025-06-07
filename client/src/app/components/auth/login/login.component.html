@@ -1,0 +1,63 @@
+<section class="section">
+  <div class="auth">
+    <div class="auth__box">
+      <div class="auth__header">
+        <i class="fa-solid fa-right-to-bracket"></i>
+        <h2>Zaloguj się</h2>
+      </div>
+      <div class="auth__form">
+        <form class="form" [formGroup]="loginFormGroup">
+          <div class="form__input required">
+            <label for="email">E-mail<span>*</span>:</label>
+            <input id="email" type="email" formControlName="email" required />
+            @if(loginFormGroup.get('email')?.touched) {
+            @if(loginFormGroup.get('email')?.errors?.['required']){
+            <small class="required-field">Pole jest wymagane</small>
+            } @else if(loginFormGroup.get('email')?.errors?.['email'] ||
+            loginFormGroup.get('email')?.errors?.['invalidEmail'] ){
+            <small class="required-field">Email jest niepoprawny</small>
+            } }
+          </div>
+          <div class="form__input required">
+            <label for="password">Hasło<span>*</span>:</label>
+            <input
+              id="password"
+              type="password"
+              formControlName="password"
+              required
+            />
+            @if(loginFormGroup.get('password')?.touched) {
+            @if(loginFormGroup.get('password')?.errors?.['required']){
+            <small class="required-field">Pole jest wymagane</small>
+            } }
+          </div>
+        </form>
+        @if(error.active){
+        <div
+          class="message__error"
+          [ngClass]="{
+            'message__error--success': error.status === 'success',
+            'message__error--error': error.status === 'error'
+          }"
+        >
+          <small>{{ error.message }}</small>
+        </div>
+        }
+        <div class="form__btns end">
+          <button
+            (click)="onSubmit()"
+            class="form__btn"
+            [ngClass]="{ 'form__btn--disabled': loginFormGroup.invalid }"
+          >
+            Zaloguj
+          </button>
+        </div>
+        <small class="auth__other"
+          >Nie masz jeszcze konta?<a [routerLink]="['/rejestracja']"
+            >zarejestruj się!</a
+          ></small
+        >
+      </div>
+    </div>
+  </div>
+</section>

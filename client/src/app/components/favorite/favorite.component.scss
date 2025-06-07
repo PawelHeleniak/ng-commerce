@@ -1,0 +1,37 @@
+.product {
+  &__list {
+    display: flex;
+    flex-direction: column;
+  }
+  &__item {
+    display: flex;
+    margin-bottom: 0.5rem;
+    background-color: #efefef;
+    border-radius: 12px;
+    padding: 0.5rem;
+    &:last-child {
+      margin-bottom: 0;
+      border-bottom: none;
+    }
+  }
+  &__image {
+    overflow: hidden;
+    border-radius: 12px;
+    margin-right: 1rem;
+    display: flex;
+
+    img {
+      width: 128px;
+      height: 128px;
+      object-fit: cover;
+    }
+  }
+  &__name {
+    font-size: 1.3rem;
+    color: var(--text_1);
+  }
+  &__price {
+    font-size: 1rem;
+    color: var(--text_2);
+  }
+}

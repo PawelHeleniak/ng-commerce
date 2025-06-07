@@ -1,0 +1,22 @@
+<section class="section">
+  <div class="section__wrapper">
+    <div class="section__title"><h2>Ulubione</h2></div>
+    <div class="section__box">
+      <div class="product">
+        <div class="product__list">
+          @for (item of products; track $index) {
+          <div class="product__item">
+            <div class="product__image">
+              <img [src]="item.img" [alt]="item.name" />
+            </div>
+            <div class="product__info">
+              <div class="product__name">{{ item.name }}</div>
+              <div class="product__price">{{ item.price }}zł</div>
+            </div>
+          </div>
+          }@empty { Brak danych }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,94 @@
+.header {
+  background: var(--nav_1);
+  padding: 0 1rem;
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    height: 50px;
+  }
+  &__logo {
+    color: #f9f9f9;
+  }
+  &__tab {
+    display: flex;
+    height: 100%;
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #f9f9f9;
+      height: 100%;
+      padding: 0 1rem;
+      transition: 0.15s ease-in color;
+      &:hover {
+        color: var(--primary);
+      }
+      i {
+        margin-right: 0.5rem;
+      }
+    }
+    .router-link-active {
+      color: var(--primary);
+    }
+  }
+
+  &__login {
+    display: flex;
+    a {
+      cursor: pointer;
+    }
+  }
+}
+.nav {
+  background-color: var(--nav_2);
+  padding: 0 1rem;
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    height: 40px;
+  }
+  &__menu {
+    width: 100%;
+    height: 100%;
+  }
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+  }
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #f9f9f9;
+    padding: 0 1rem;
+    position: relative;
+    cursor: pointer;
+    &::before {
+      content: "";
+      position: absolute;
+      height: 4px;
+      width: 100%;
+      bottom: 0;
+      background-color: transparent;
+      transition: 0.15s ease-in background-color;
+    }
+    &--active {
+      color: var(--primary);
+      &::before {
+        background-color: var(--primary);
+      }
+    }
+    &:hover::before {
+      background-color: var(--primary);
+    }
+  }
+}
