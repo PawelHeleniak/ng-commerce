@@ -1,0 +1,71 @@
+<div class="container">
+  <div class="banner">
+    <img src="../../../../assets/img/banner.jpg" alt="Banner" />
+  </div>
+  <section class="section">
+    <div class="section__header">
+      <h2>Polecane</h2>
+      <a href="">Zobacz więcej <i class="fa-solid fa-chevron-right"></i></a>
+    </div>
+    <div class="section__box">
+      <div class="slider">
+        @for (item of products; track $index) { @if(item.place === 1){
+        <button class="slider__item">
+          <img [src]="item.img" [alt]="item.imgAlt" />
+          <div class="slider__desc">
+            <div class="slider__price">{{ item.price }} zł</div>
+            <div class="slider__name">{{ item.model }}</div>
+            <div class="slider__purchasing">
+              {{ item.additional.purchasing }}
+            </div>
+          </div>
+        </button>
+        } }
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="section__header">
+      <h2>Nowości</h2>
+      <a href="">Zobacz więcej <i class="fa-solid fa-chevron-right"></i></a>
+    </div>
+    <div class="section__box">
+      <div class="slider">
+        @for (item of products; track $index) { @if(item.place === 2){
+        <button class="slider__item">
+          <img [src]="item.img" [alt]="item.imgAlt" />
+          <div class="slider__desc">
+            <div class="slider__price">{{ item.price }} zł</div>
+            <div class="slider__name">{{ item.model }}</div>
+            <div class="slider__purchasing">
+              {{ item.additional.purchasing }}
+            </div>
+          </div>
+        </button>
+        } }
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="section__header">
+      <h2>Promocje</h2>
+      <a href="">Zobacz więcej <i class="fa-solid fa-chevron-right"></i></a>
+    </div>
+    <div class="section__box">
+      <div class="slider">
+        @for (item of products; track $index) { @if(item.place === 3){
+        <button class="slider__item">
+          <img [src]="item.img" [alt]="item.imgAlt" />
+          <div class="slider__desc">
+            <div class="slider__price">{{ item.price }} zł</div>
+            <div class="slider__name">{{ item.model }}</div>
+            <div class="slider__purchasing">
+              {{ item.additional.purchasing }}
+            </div>
+          </div>
+        </button>
+        } }
+      </div>
+    </div>
+  </section>
+</div>

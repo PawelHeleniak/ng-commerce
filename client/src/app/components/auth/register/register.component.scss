@@ -1,17 +1,21 @@
-.section {
+.container {
+  min-height: 100vh;
+  min-width: 100vw;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  height: 100%;
-  width: 100%;
 }
 .auth {
-  width: 400px;
+  display: flex;
+  justify-content: center;
+  width: 600px;
   padding: 2rem;
   border-radius: 8px;
   border: 1px solid #dfdfdf;
+  background-color: var(--bg_box);
+  &__box {
+    width: 400px;
+  }
   &__header {
     padding-bottom: 1rem;
     display: flex;

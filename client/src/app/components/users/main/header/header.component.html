@@ -1,7 +1,24 @@
 <header class="header">
   <div class="header__wrapper">
-    <div class="header__logo">YourPhone</div>
+    <div class="header__logo">
+      <div>NgCommerce</div>
+      <form>
+        <input type="text" placeholder="Wyszukaj produkt" /><i
+          class="fa-solid fa-magnifying-glass"
+        ></i>
+      </form>
+    </div>
     <div class="header__tab">
+      <div class="header__favorite">
+        <a
+          [routerLink]="['/ulubione']"
+          [ngClass]="{ 'router-link-active': 'ulubione' === nav }"
+          (click)="handleNav('ulubione')"
+        >
+          <i class="fa-solid fa-heart"></i>
+          <span>Ulubione</span>
+        </a>
+      </div>
       <div class="header__login">
         @if(!account){
         <a [routerLink]="['/logowanie']" (click)="handleNav('')">
@@ -22,16 +39,6 @@
           <span>Konto</span>
         </a>
         }
-      </div>
-      <div class="header__favorite">
-        <a
-          [routerLink]="['/ulubione']"
-          [ngClass]="{ 'router-link-active': 'ulubione' === nav }"
-          (click)="handleNav('ulubione')"
-        >
-          <i class="fa-solid fa-heart"></i>
-          <span>Ulubione</span>
-        </a>
       </div>
     </div>
   </div>

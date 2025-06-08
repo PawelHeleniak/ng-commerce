@@ -1,6 +1,7 @@
 .header {
   background: var(--nav_1);
   padding: 0 1rem;
+  border-bottom: 1px solid var(--input-border);
   &__wrapper {
     display: flex;
     justify-content: space-between;
@@ -8,10 +9,30 @@
     max-width: 1400px;
     width: 100%;
     margin: 0 auto;
-    height: 50px;
+    height: 70px;
   }
   &__logo {
-    color: #f9f9f9;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    form {
+      position: relative;
+      min-width: 400px;
+      input {
+        border: 1px solid var(--input-border);
+        border-radius: 8px;
+        padding: 6px 12px;
+        width: 100%;
+      }
+      i {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        margin: 0 12px;
+        color: #bdbdbd;
+      }
+    }
   }
   &__tab {
     display: flex;
@@ -20,7 +41,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      color: #f9f9f9;
+      // color: #f9f9f9;
       height: 100%;
       padding: 0 1rem;
       transition: 0.15s ease-in color;
@@ -44,7 +65,7 @@
   }
 }
 .nav {
-  background-color: var(--nav_2);
+  background-color: var(--nav_1);
   padding: 0 1rem;
   &__wrapper {
     display: flex;
@@ -68,7 +89,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #f9f9f9;
+    // color: #f9f9f9;
     padding: 0 1rem;
     position: relative;
     cursor: pointer;

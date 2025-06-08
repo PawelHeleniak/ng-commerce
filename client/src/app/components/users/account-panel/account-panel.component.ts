@@ -9,7 +9,7 @@ import {
   ValidationErrors,
   ValidatorFn,
 } from '@angular/forms';
-import { AccountService } from '../../core/services/account.service';
+import { AccountService } from '../../../core/services/account.service';
 
 type Order = {
   order: string;
@@ -17,10 +17,10 @@ type Order = {
   status: string;
 };
 @Component({
-    selector: 'app-account-panel',
-    imports: [CommonModule, ReactiveFormsModule],
-    templateUrl: './account-panel.component.html',
-    styleUrl: './account-panel.component.scss'
+  selector: 'app-account-panel',
+  imports: [CommonModule, ReactiveFormsModule],
+  templateUrl: './account-panel.component.html',
+  styleUrl: './account-panel.component.scss',
 })
 export class AccountPanelComponent {
   constructor(

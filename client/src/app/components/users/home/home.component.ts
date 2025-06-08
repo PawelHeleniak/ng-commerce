@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { ProductsService } from '../../core/services/products.service';
+import { ProductsService } from '../../../core/services/products.service';
 
 type Product = {
   img: string;
@@ -12,7 +12,9 @@ type Product = {
   amount: number;
   spec: ProductSpec;
   place: number;
+  additional: Additional;
 };
+
 type ProductSpec = {
   color: string;
   memory: string;
@@ -22,11 +24,15 @@ type ProductSpec = {
   waterproof: string;
 };
 
+type Additional = {
+  purchasing: string;
+};
+
 @Component({
-    selector: 'app-home',
-    imports: [],
-    templateUrl: './home.component.html',
-    styleUrl: './home.component.scss'
+  selector: 'app-home',
+  imports: [],
+  templateUrl: './home.component.html',
+  styleUrl: './home.component.scss',
 })
 export class HomeComponent {
   constructor(private productsService: ProductsService) {}

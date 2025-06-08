@@ -1,3 +1,6 @@
+body {
+  background-color: var(--bg_1);
+}
 main {
   display: flex;
   flex-direction: column;
@@ -17,18 +20,42 @@ main {
 }
 
 .section {
-  padding: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: var(--bg_box);
+  border-radius: 8px;
   &__wrapper {
     width: 100%;
     max-width: 1400px;
     margin: 0 auto;
   }
-  &__title {
-    margin-top: 2rem;
+  &__header {
+    display: flex;
+    align-items: flex-end;
+    gap: 0.5rem;
+    a {
+      color: var(--success);
+      margin-bottom: 2px;
+      font-size: 1rem;
+      &:hover {
+        color: var(--primary);
+      }
+      i {
+        font-size: 0.9rem;
+      }
+    }
   }
+  // &__title {
+  //   margin-top: 2rem;
+  // }
   &__box {
-    background-color: #efefef;
+    background-color: var(--bg_box);
     border-radius: 12px;
     padding: 1rem;
   }
+}
+.container {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }

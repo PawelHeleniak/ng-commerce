@@ -5,12 +5,13 @@ type Product = {
   price: string;
   img: string;
   desc: string;
+  purchasing: string;
 };
 @Component({
-    selector: 'app-favorite',
-    imports: [],
-    templateUrl: './favorite.component.html',
-    styleUrl: './favorite.component.scss'
+  selector: 'app-favorite',
+  imports: [],
+  templateUrl: './favorite.component.html',
+  styleUrl: './favorite.component.scss',
 })
 export class FavoriteComponent {
   public products: Array<Product> = [
@@ -19,18 +20,21 @@ export class FavoriteComponent {
       price: '2 999,00',
       img: 'https://cdn.x-kom.pl/i/setup/images/prod/big/product-new-big,,2024/5/pr_2024_5_15_7_0_50_262_05.jpg',
       desc: '',
+      purchasing: '19 osób kupiło',
     },
     {
       name: 'Google Pixel 8a',
       price: '3 799,00',
       img: 'https://cdn.x-kom.pl/i/setup/images/prod/big/product-new-big,,2024/5/pr_2024_5_22_12_38_26_806_00.jpg',
       desc: '',
+      purchasing: '14 osoby kupiły',
     },
     {
       name: 'Apple iPhone 14',
       price: '3 799,00',
       img: 'https://cdn.x-kom.pl/i/setup/images/prod/big/product-new-big,,2022/9/pr_2022_9_9_10_22_7_714_02.jpg',
       desc: '',
+      purchasing: '8 osoba kupiła',
     },
   ];
 }
